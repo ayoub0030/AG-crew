@@ -1,10 +1,7 @@
 #!/usr/bin/env python
 import sys
 import warnings
-from latest_ai_development.crew import LatestAiDevelopmentCrew
-
 from datetime import datetime
-
 from first_crew.crew import FirstCrew
 
 warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
@@ -14,12 +11,12 @@ warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
 # Replace with inputs you want to test with, it will automatically
 # interpolate any tasks and agents information
 
-def ruun():
+def run():
     """
     Run the crew.
     """
     inputs = {
-        'topic': 'AI LLMs',
+        'topic': 'AI agents in 2027',
         'current_year': str(datetime.now().year)
     }
     
@@ -27,15 +24,6 @@ def ruun():
         FirstCrew().crew().kickoff(inputs=inputs)
     except Exception as e:
         raise Exception(f"An error occurred while running the crew: {e}")
-
-def run():
-  """
-  Run the crew.
-  """
-  inputs = {
-    'topic': 'AI Agents'
-  }
-  LatestAiDevelopmentCrew().crew().kickoff(inputs=inputs)
 
 def train():
     """

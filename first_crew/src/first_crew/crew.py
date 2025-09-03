@@ -6,8 +6,8 @@ from crewai.agents.agent_builder.base_agent import BaseAgent
 from typing import List
 
 @CrewBase
-class LatestAiDevelopmentCrew():
-  """LatestAiDevelopment crew"""
+class FirstCrew():
+  """FirstCrew crew"""
 
   agents: List[BaseAgent]
   tasks: List[Task]

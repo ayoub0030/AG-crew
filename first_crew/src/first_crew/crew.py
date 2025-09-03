@@ -31,7 +31,8 @@ class FirstCrew():
   def linkedin_post_creator(self) -> Agent:
     return Agent(
       config=self.agents_config['linkedin_post_creator'], # type: ignore[index]
-      verbose=True
+      verbose=True,
+      tools=[SerperDevTool()]
     )
 
   @task

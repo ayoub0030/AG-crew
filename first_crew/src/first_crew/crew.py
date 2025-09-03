@@ -27,14 +27,6 @@ class FirstCrew():
       verbose=True
     )
 
-  @agent
-  def linkedin_post_creator(self) -> Agent:
-    return Agent(
-      config=self.agents_config['linkedin_post_creator'], # type: ignore[index]
-      verbose=True,
-      tools=[SerperDevTool()]
-    )
-
   @task
   def research_task(self) -> Task:
     return Task(
@@ -46,13 +38,6 @@ class FirstCrew():
     return Task(
       config=self.tasks_config['reporting_task'], # type: ignore[index]
       output_file='output/report.md' # This is the file that will be contain the final report.
-    )
-
-  @task
-  def linkedin_post_task(self) -> Task:
-    return Task(
-      config=self.tasks_config['linkedin_post_task'], # type: ignore[index]
-      output_file='output/linkedin_post.md'
     )
 
   @crew

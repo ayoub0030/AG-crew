@@ -5,15 +5,35 @@ research_task:
     Make sure you find any interesting and relevant information given
     the current year is 2025.
   expected_output: >
-    A list with 10 bullet points of the most relevant information about {topic}
+    A list with 5 bullet points of the most relevant information about {topic}
   agent: researcher
+
+create_post:
+  description: >
+    create a linked in post from the report about topic {topic}
+    the post should be appeling the taget audience is student
+
+  expected_output: >
+     the post lenght medium and add 1 emoji 
+     it should start with a hook to get viewrs attention then a paraghraphe explaining the topic 
+     then call to action or a question in order to imporve atention the impressions
+  agent: post_createor
+
+
+create_image:
+  description: >
+    createa an image to post it in linked in next to the post we previously created
+  expected_output: >
+    prompt describing the image in details in order to give it to chagpt image generatino to generate it 
+    
+  agent: post_designer
 
 reporting_task:
   description: >
-    Review the context you got and expand each topic into a full section for a report.
-    Make sure the report is detailed and contains any and all relevant information.
+    from the post text and the image genaration give a structure lnked in post starting by text then image prompt
   expected_output: >
-    A small 10 phrase reports with the mains topics, each with a full section of information.
-    Formatted as markdown without '```'
+    asemble the post text plus the image prompt in a linked in postlike this :
+    post : the actual text post 
+    image : the image prompt 
   agent: reporting_analyst
   output_file: report.md

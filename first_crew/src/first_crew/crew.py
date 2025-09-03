@@ -26,6 +26,32 @@ class FirstCrew():
       config=self.agents_config['reporting_analyst'], # type: ignore[index]
       verbose=True
     )
+  @agent 
+
+  def post_designer(self) -> Agent:
+    return Agent(
+      config=self.agents_config['post_designer'], # type: ignore[index]
+      verbose=True
+    )
+
+  @agent 
+
+  def post_createor(self) -> Agent:
+    return Agent(
+      config=self.agents_config['post_createor'], # type: ignore[index]
+      verbose=True
+    )
+
+  @task
+  def create_post(self) -> Task:
+    return Task(
+      config=self.tasks_config['create_post'], # type: ignore[index]
+    )
+  @task
+  def create_image(self) -> Task:
+    return Task(
+      config=self.tasks_config['create_image'], # type: ignore[index]
+    )
 
   @task
   def research_task(self) -> Task:
@@ -44,8 +70,8 @@ class FirstCrew():
   def crew(self) -> Crew:
     """Creates the LatestAiDevelopment crew"""
     return Crew(
-      agents=self.agents, # Automatically created by the @agent decorator
-      tasks=self.tasks, # Automatically created by the @task decorator
+      agents=self.agents,  # Automatically created by the @agent decorator
+      tasks=self.tasks,    # Automatically created by the @task decorator
       process=Process.sequential,
       verbose=True,
     )

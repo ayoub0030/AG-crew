@@ -10,13 +10,13 @@ warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
 # crew locally, so refrain from adding unnecessary logic into this file.
 # Replace with inputs you want to test with, it will automatically
 # interpolate any tasks and agents information
-
+topics=["ai agent" ,"ai latest tool"]
 def run():
     """
     Run the crew.
     """
     inputs = {
-        'topic': 'AI agents in 2027',
+        'topic': "aiagent",
         'current_year': str(datetime.now().year)
     }
     

@@ -17,3 +17,18 @@ reporting_task:
     Formatted as markdown without '```'
   agent: reporting_analyst
   output_file: report.md
+
+linkedin_post_task:
+  description: >
+    Create a medium-length LinkedIn post about {topic} for developers and students (basic to intermediate level)
+    with a casual, conversational tone. Structure the post as: 1) Hook, 2) Explanation paragraph(s),
+    3) One engaging question, 4) Clear CTA. Include at most one emoji. Add one credible statistic with a source.
+    Append 2-3 relevant, trending hashtags. Also provide a separate realistic, fun image prompt aligned with the content.
+  expected_output: >
+    Markdown without code fences. Sections:
+    - Post: The full LinkedIn post text (includes hook, explanation, one question, CTA, <=1 emoji).
+    - Stats: One statistic with a cited source (URL or publication name and date).
+    - Hashtags: 2-3 hashtags.
+    - Image Prompt: A short, realistic and fun description for image generation, tied to the post.
+  agent: linkedin_post_creator
+  output_file: output/linkedin_post.md

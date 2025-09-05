@@ -25,6 +25,7 @@ create_image:
     createa an image to post it in linked in next to the post we previously created
   expected_output: >
     prompt describing the image in details in order to give it to chagpt image generatino to generate it 
+    prompt should be simple with importing details 
     
   agent: post_designer
 
@@ -33,6 +34,7 @@ reporting_task:
     from the post text and the image genaration give a structure lnked in post starting by text then image prompt
   expected_output: >
     asemble the post text plus the image prompt in a linked in postlike this :
+    sont add any specifique pointers
     post : the actual text post 
     image : the image prompt 
   agent: reporting_analyst
